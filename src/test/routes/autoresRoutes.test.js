@@ -53,19 +53,19 @@ describe('GET em /autores', () => {
       });
   });
 
-  /* it('Deve retornar uma lista de livros.', (done) => {
-    const autorId = 1;
+  it('Deve retornar uma lista de livros vazia', (done) => {
+    const idAutor = 4;
     chai.request(app)
-      .get(`/autores/${autorId}/livros`)
+      .get(`/autores/${idAutor}/livros`)
       .set('Accept', 'application/json')
       .end((err, res) => {
         expect(res.status).to.equal(200);
         expect(res.body).to.have.property('autor');
         expect(res.body).to.have.property('livros');
-        expect(res.body.livros).to.be.an('array');
+        expect(res.body.livros).to.be.an('array').that.is.empty;
         done();
       });
-  }); */
+  });
 });
 
 describe('POST em /autores', () => {
